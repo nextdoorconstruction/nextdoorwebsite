@@ -46,9 +46,17 @@ function initNavbar() {
       }
     });
 
-    /* ── Scroll effect disabled as per fixed black header request ── */
+    /* ── Scroll: add dark background after 60px ── */
     const handleScroll = () => {
-      // Navbar is permanently black, so no background/logo switching is needed.
+      try {
+        if (window.scrollY > 60) {
+          navbar.classList.add('navbar-scrolled');
+        } else {
+          navbar.classList.remove('navbar-scrolled');
+        }
+      } catch (err) {
+        // silent fail
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
