@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Shapoorji Pallonji",
+    "logo": "/assets/images/clients/shapoorji-pallonji.svg",
+    "sector": "Real Estate"
+  },
+  {
+    "id": 2,
+    "name": "Mahindra Lifespaces",
+    "logo": "/assets/images/clients/mahindra-lifespaces.svg",
+    "sector": "Real Estate"
+  },
+  {
+    "id": 3,
+    "name": "Godrej Properties",
+    "logo": "/assets/images/clients/godrej-properties.svg",
+    "sector": "Real Estate"
+  },
+  {
+    "id": 4,
+    "name": "L&T Construction",
+    "logo": "/assets/images/clients/lt-construction.svg",
+    "sector": "Infrastructure"
+  },
+  {
+    "id": 5,
+    "name": "HDFC Realty",
+    "logo": "/assets/images/clients/hdfc-realty.svg",
+    "sector": "Finance & Real Estate"
+  },
+  {
+    "id": 6,
+    "name": "Oberoi Realty",
+    "logo": "/assets/images/clients/oberoi-realty.svg",
+    "sector": "Real Estate"
+  }
+]

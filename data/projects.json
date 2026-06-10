@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "Skyline Residences",
+    "category": "Residential",
+    "location": "Mumbai, Maharashtra",
+    "year": "2023",
+    "description": "A 12-storey luxury residential complex featuring 96 premium apartments with modern amenities, rooftop garden, and underground parking.",
+    "status": "Completed",
+    "image": "/assets/images/projects/skyline-residences.jpg",
+    "tags": ["Residential", "High-Rise", "Luxury"]
+  },
+  {
+    "id": 2,
+    "title": "Meridian Corporate Park",
+    "category": "Commercial",
+    "location": "Pune, Maharashtra",
+    "year": "2023",
+    "description": "A state-of-the-art 5-building commercial campus spanning 3.2 lakh sq.ft., designed for enterprise-grade tenants with Grade-A infrastructure.",
+    "status": "Completed",
+    "image": "/assets/images/projects/meridian-corporate-park.jpg",
+    "tags": ["Commercial", "Corporate", "Campus"]
+  },
+  {
+    "id": 3,
+    "title": "The Ashford Villas",
+    "category": "Residential",
+    "location": "Lonavala, Maharashtra",
+    "year": "2022",
+    "description": "Eighteen standalone luxury villas nestled in the Sahyadri hills, blending modern architecture with the natural landscape.",
+    "status": "Completed",
+    "image": "/assets/images/projects/ashford-villas.jpg",
+    "tags": ["Residential", "Villa", "Luxury"]
+  },
+  {
+    "id": 4,
+    "title": "Greenfield Industrial Hub",
+    "category": "Industrial",
+    "location": "Nashik, Maharashtra",
+    "year": "2022",
+    "description": "A purpose-built industrial facility covering 8 acres with specialized warehousing, ETP plant, and 24/7 utility infrastructure.",
+    "status": "Completed",
+    "image": "/assets/images/projects/greenfield-industrial.jpg",
+    "tags": ["Industrial", "Warehouse", "Infrastructure"]
+  },
+  {
+    "id": 5,
+    "title": "Prestige Gateway Mall",
+    "category": "Commercial",
+    "location": "Nagpur, Maharashtra",
+    "year": "2024",
+    "description": "A 4-level retail and entertainment destination with 200+ retail units, food court, multiplex, and 1,200-vehicle parking.",
+    "status": "Ongoing",
+    "image": "/assets/images/projects/prestige-gateway-mall.jpg",
+    "tags": ["Commercial", "Retail", "Mall"]
+  },
+  {
+    "id": 6,
+    "title": "Oakwood Township",
+    "category": "Residential",
+    "location": "Aurangabad, Maharashtra",
+    "year": "2024",
+    "description": "An integrated township spread over 22 acres comprising 580 residential units, club house, schools, and retail outlets.",
+    "status": "Ongoing",
+    "image": "/assets/images/projects/oakwood-township.jpg",
+    "tags": ["Residential", "Township", "Integrated"]
+  }
+]

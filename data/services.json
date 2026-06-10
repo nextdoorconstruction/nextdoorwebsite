@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Residential Construction",
+    "icon": "home",
+    "description": "From individual villas to large-scale housing complexes, we deliver homes built to last with precision engineering and superior materials.",
+    "features": [
+      "Luxury villas & bungalows",
+      "Apartment complexes",
+      "Gated communities & townships",
+      "Renovation & interior fit-out"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Commercial Construction",
+    "icon": "building",
+    "description": "We build commercial spaces that perform — from corporate offices and retail centres to hospitality projects and mixed-use developments.",
+    "features": [
+      "Corporate campuses & IT parks",
+      "Retail & shopping centres",
+      "Hotels & hospitality",
+      "Mixed-use developments"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Industrial Construction",
+    "icon": "industry",
+    "description": "Robust, compliant industrial facilities engineered for operational efficiency, safety, and long-term performance.",
+    "features": [
+      "Manufacturing plants",
+      "Warehouses & logistics hubs",
+      "Cold storage facilities",
+      "ETP & utility infrastructure"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Project Management",
+    "icon": "chart",
+    "description": "End-to-end project management services ensuring on-time, on-budget delivery without compromise on quality.",
+    "features": [
+      "Feasibility studies",
+      "Cost estimation & tendering",
+      "Site supervision & quality control",
+      "Statutory approvals management"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Turnkey Solutions",
+    "icon": "key",
+    "description": "We handle everything — design, engineering, procurement, and execution — so you receive a ready-to-use facility.",
+    "features": [
+      "Design-build contracts",
+      "Procurement management",
+      "MEP coordination",
+      "Handover & commissioning"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Renovation & Restoration",
+    "icon": "wrench",
+    "description": "Breathing new life into existing structures with structural retrofitting, facade upgrades, and complete interior overhauls.",
+    "features": [
+      "Structural retrofitting",
+      "Facade & external upgrades",
+      "Interior renovation",
+      "Heritage building restoration"
+    ]
+  }
+]

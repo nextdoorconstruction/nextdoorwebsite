@@ -1,0 +1,16 @@
+# robots.txt — NextDoor Constructions LLP
+# ─────────────────────────────────────────────────────────────────
+# Instructs web crawlers (Googlebot, Bingbot, etc.) on what to crawl.
+# TODO: Replace YOUR-VERCEL-DOMAIN with your actual domain.
+# ─────────────────────────────────────────────────────────────────
+
+User-agent: *
+Allow: /
+
+# Disallow internal/dev files from being indexed
+Disallow: /node_modules/
+Disallow: /css/style.css
+Disallow: /seo/meta-tags.md
+
+# Sitemap location
+Sitemap: https://YOUR-VERCEL-DOMAIN.vercel.app/seo/sitemap.xml

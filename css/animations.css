@@ -1,0 +1,167 @@
+/* ============================================================
+   animations.css — NextDoor Constructions LLP
+   Minimal, purposeful CSS animations.
+   Philosophy: Subtle motion that conveys professionalism —
+   no bouncy, flashy, or startup-style effects.
+   ============================================================ */
+
+/* ── Page Transition States ──────────────────────────────────
+   Controlled by transitions.js.
+   body starts hidden; JS adds .page-ready to fade in.
+   JS adds .page-exit before navigating away.
+   ──────────────────────────────────────────────────────────── */
+
+/* Initial hidden state — prevents flash of unstyled content */
+body {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+/* Entry state — transitions.js adds this class on DOMContentLoaded */
+body.page-ready {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity  650ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 650ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Exit state — transitions.js adds this class before navigating */
+body.page-exit {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+    opacity  520ms cubic-bezier(0.55, 0, 1, 0.45),
+    transform 520ms cubic-bezier(0.55, 0, 1, 0.45);
+  pointer-events: none; /* Prevent clicks during exit */
+}
+
+/* No-JS fallback — make body visible if JS never runs */
+@supports not (opacity: 0) {
+  body { opacity: 1; transform: none; }
+}
+
+/* ── Fade In Up (default scroll animation) ──────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Fade In (no movement) ───────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Slide In Left ───────────────────────────────────────── */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ── Expand Width (for accent lines / progress bars) ────── */
+@keyframes expandWidth {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* ── Pulse (for CTA button border) ──────────────────────── */
+@keyframes subtlePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(192, 57, 43, 0.0); }
+  50%       { box-shadow: 0 0 0 6px rgba(192, 57, 43, 0.15); }
+}
+
+/* ── Classes ─────────────────────────────────────────────── */
+
+/* Applied by IntersectionObserver in animations.js */
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.anim-fade-up.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children delays */
+.anim-stagger > *:nth-child(1) { transition-delay: 0.05s; }
+.anim-stagger > *:nth-child(2) { transition-delay: 0.12s; }
+.anim-stagger > *:nth-child(3) { transition-delay: 0.19s; }
+.anim-stagger > *:nth-child(4) { transition-delay: 0.26s; }
+.anim-stagger > *:nth-child(5) { transition-delay: 0.33s; }
+.anim-stagger > *:nth-child(6) { transition-delay: 0.40s; }
+
+/* Slide in from left */
+.anim-slide-left {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.anim-slide-left.animated {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Hero entrance — triggered on page load */
+.hero-animate {
+  animation: fadeInUp 0.8s ease both;
+}
+
+.hero-animate-delay-1 {
+  animation: fadeInUp 0.8s ease 0.15s both;
+}
+
+.hero-animate-delay-2 {
+  animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+/* Subtle pulse on primary CTA */
+.btn-pulse {
+  animation: subtlePulse 3s ease infinite;
+}
+
+/* Accent line expand */
+.accent-line-animate {
+  animation: expandWidth 0.8s ease 0.4s both;
+}
+
+/* Reduce motion: respect OS preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .anim-fade-up,
+  .anim-slide-left {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Skip page transitions for reduced-motion users */
+  body,
+  body.page-ready,
+  body.page-exit {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

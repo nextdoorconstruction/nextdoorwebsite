@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers — NextDoor Constructions LLP</title>
+  <meta name="description" content="Join NextDoor Constructions LLP. We are looking for talented individuals to join our team." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://YOUR-VERCEL-DOMAIN.vercel.app/careers.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/output.css" />
+  <link rel="stylesheet" href="/css/utilities.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+  <noscript><style>body{opacity:1!important;transform:none!important;}</style></noscript>
+  <style>
+    /* Careers page styles */
+    .loader {
+      border: 3px solid rgba(0,0,0,0.1);
+      border-left-color: #ef4444;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 40px auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .careers-bg-wrapper {
+      position: relative;
+      background-image: 
+        linear-gradient(to bottom, #000000 0%, transparent 15%, transparent 85%, #ffffff 100%),
+        linear-gradient(rgba(240, 240, 240, 0.85), rgba(245, 245, 245, 0.9)),
+        url('/WhatsApp%20Image%202026-06-09%20at%205.38.36%20PM.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      z-index: 1;
+    }
+    @media (max-width: 768px) {
+      .careers-bg-wrapper {
+        background-attachment: scroll;
+      }
+    }
+    /* Google Forms tooltip */
+    .gform-tooltip-wrap {
+      position: relative;
+      display: inline-block;
+    }
+    .gform-tooltip-wrap .gform-tooltip {
+      visibility: hidden;
+      opacity: 0;
+      background: #111;
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-align: center;
+      border-radius: 6px;
+      padding: 7px 12px;
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      transform: translateX(-50%) translateY(4px);
+      z-index: 50;
+      max-width: 260px;
+      white-space: normal;
+      line-height: 1.4;
+    }
+    .gform-tooltip-wrap .gform-tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: #111;
+    }
+    .gform-tooltip-wrap:hover .gform-tooltip {
+      visibility: visible;
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-black min-h-screen flex flex-col">
+  <div id="navbar-placeholder"></div>
+
+  <main id="main-content" class="flex-1">
+
+    <div class="careers-bg-wrapper">
+
+    <!-- ══ 1. HERO ═══════════════════════════════════════════════════════════ -->
+    <section class="relative pb-8 md:pb-10 border-b border-brand-border bg-transparent"
+             style="padding-top: 220px;"
+             aria-labelledby="careers-hero-heading">
+      <div class="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-black via-black/70 via-40% to-transparent pointer-events-none z-0"></div>
+      <div class="container-site relative z-10">
+        <p class="label-eyebrow">Join Our Team</p>
+        <h1 id="careers-hero-heading" class="heading-page text-brand-text max-w-3xl text-balance">
+          Build Your Future<br />
+          <span class="text-brand-red">With NextDoor</span>
+        </h1>
+      </div>
+    </section>
+
+
+
+    <!-- ══ 3. OPEN ROLES ════════════════════════════════════════════════════ -->
+    <section class="pt-8 pb-16 md:pb-24 relative overflow-hidden bg-transparent" aria-labelledby="roles-heading" style="background-image: linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px); background-size: 30px 30px;">
+      
+      <!-- Background subtle red glow -->
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-red/5 blur-[120px] rounded-full pointer-events-none" aria-hidden="true"></div>
+
+      <div class="container-site relative z-10">
+        
+        <div class="mb-12 text-center md:text-left">
+          <p class="label-eyebrow text-gray-500 mb-4 anim-fade-up">Opportunities</p>
+          <h2 id="roles-heading" class="heading-section text-black anim-fade-up">Open Positions</h2>
+        </div>
+
+        <!-- Careers Grid Container -->
+        <div id="careers-container" class="min-h-[300px]">
+          <!-- Loader will show initially -->
+          <div id="careers-loader" class="loader anim-fade-up"></div>
+          
+          <!-- Grid will be populated by inline careers script -->
+          <div id="careers-grid" class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch hidden"></div>
+          
+          <!-- Empty state message -->
+          <div id="careers-empty" class="hidden text-center py-16 px-6 bg-white border border-black/10 shadow-sm rounded-xl anim-fade-up">
+            <p class="text-gray-600 max-w-md mx-auto text-lg leading-relaxed">There are currently no open positions available. Please check back later or submit a general application.</p>
+          </div>
+          
+          <!-- Error state message -->
+          <div id="careers-error" class="hidden text-center py-20 bg-white border border-brand-red/20 shadow-sm anim-fade-up">
+            <h3 class="text-2xl font-display uppercase tracking-widest text-brand-red mb-4">Error Loading Jobs</h3>
+            <p class="text-gray-500 mb-4">We encountered an issue while loading the open roles.</p>
+            <p class="text-xs text-gray-400">Please make sure the Google Sheet is published to the web.</p>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- ══ 4. GENERAL APPLICATION ════════════════════════════════════════════ -->
+    <section class="section-padding bg-transparent relative border-t border-brand-border" aria-labelledby="general-app-heading">
+      <div class="container-site max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 id="general-app-heading" class="heading-section text-black mb-4 anim-fade-up">General Application</h2>
+          <p class="text-gray-600 anim-fade-up anim-delay-100">
+            Don't see a suitable role? Submit your resume and we'll keep your profile on file for future opportunities.
+          </p>
+        </div>
+
+        <!-- Google Forms CTA Card -->
+        <div class="bg-white border border-black/10 shadow-xl p-8 md:p-12 anim-fade-up anim-delay-200 text-center">
+          <p class="text-gray-500 text-sm mb-8 max-w-md mx-auto leading-relaxed">
+            Our application process is handled securely through Google Forms. Click below to open the form in a new tab — it takes less than 2 minutes to complete.
+          </p>
+          <div class="gform-tooltip-wrap inline-block">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfvWgPZQ44utcEk5wZUOtjcrFw_mKr1ZNY_UR5_9yzEVn9UbQ/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary inline-flex items-center gap-3 group hover:gap-4 transition-all duration-300"
+            >
+              Submit General Application
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+            <div class="gform-tooltip">Applications are handled via Google Forms. You'll be redirected to a secure form in a new tab.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    </div>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <div id="form-toast" role="alert" aria-live="polite"></div>
+
+  <script src="/js/transitions.js?v=2" defer></script>
+  <script src="/js/navbar.js?v=2"      defer></script>
+  <script src="/js/animations.js?v=2"  defer></script>
+  <script src="/js/main.js?v=2"        defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('careers-grid');
+      const loader = document.getElementById('careers-loader');
+      const empty = document.getElementById('careers-empty');
+      const errState = document.getElementById('careers-error');
+      
+      if (!grid) return;
+      
+      const SHEET_URL = 'https://opensheet.elk.sh/1np58iNstAaw6J3bhuT-Q4CpKHwBMI9RTc0dY4EBFQ9M/Sheet1';
+      
+      async function fetchJobs() {
+        try {
+          const res = await fetch(SHEET_URL);
+          if (!res.ok) throw new Error('Network error');
+          const data = await res.json();
+          
+          if (loader) loader.style.display = 'none';
+          if (!Array.isArray(data)) throw new Error('Not an array');
+          
+          const openJobs = data.filter(
+            job => (job["Status"] || "").trim().toLowerCase() === "open"
+          );
+          
+          if (openJobs.length === 0) {
+            if (empty) empty.classList.remove('hidden');
+            return;
+          }
+          
+          grid.classList.remove('hidden');
+          grid.innerHTML = '';
+          
+          openJobs.forEach((job, idx) => {
+            const card = document.createElement('div');
+            // Removed 'anim-fade-up' because dynamically added elements are missed by the initial IntersectionObserver, causing them to have opacity: 0 permanently.
+            card.className = 'bg-white rounded-[20px] border-t-4 border-brand-red p-6 shadow-sm hover:shadow-xl transition-all duration-300 ease-out flex flex-col h-full group relative overflow-hidden';
+            
+            // Add a simple inline animation for the fade-in effect instead
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            
+            // Trigger animation shortly after adding to DOM
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 100 + (idx * 100));
+            
+            const title = job["Job Title"] || 'Untitled';
+            const location = job["Location"] || 'Unspecified';
+            const experience = job["Experience"] || 'Any';
+            const description = job["Description"] || '';
+            
+            card.innerHTML = `
+              <!-- Top: Title + Badge -->
+              <div class="flex items-start justify-between gap-3 mb-2">
+                <h3 class="text-lg font-display uppercase tracking-widest text-black group-hover:text-brand-red transition-colors duration-300 leading-snug flex-1 min-w-0">${title}</h3>
+                <span class="inline-flex shrink-0 items-center px-2 py-0.5 bg-brand-red/10 border border-brand-red/20 text-[9px] uppercase tracking-widest font-bold text-brand-red rounded-full whitespace-nowrap">${experience}</span>
+              </div>
+
+              <!-- Location row -->
+              <div class="flex items-center gap-1.5 mb-3 text-[10px] font-bold uppercase tracking-widest text-gray-500">
+                <svg class="w-3.5 h-3.5 text-brand-red shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <span>${location}</span>
+              </div>
+
+              <!-- Description: fills remaining space, limited to 2 lines -->
+              <div class="flex-1 mb-4">
+                <p class="text-gray-600 leading-relaxed text-sm line-clamp-2">${description}</p>
+              </div>
+
+              <!-- CTA: always pinned to bottom -->
+              <div class="pt-3 border-t border-black/5">
+                <div class="gform-tooltip-wrap">
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSdfXynFMUJcfXJCFeFwNHBnldk8ZruwTc--3yRQDMPah0EjLQ/viewform?usp=pp_url&entry.278542326=${encodeURIComponent(title)}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-brand-red hover:text-black transition-colors duration-300 group/link"
+                  >
+                    APPLY NOW
+                    <svg class="w-3.5 h-3.5 transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  </a>
+                  <div class="gform-tooltip">Applications are handled via Google Forms. You'll be redirected to a secure form in a new tab.</div>
+                </div>
+              </div>
+            `;
+            grid.appendChild(card);
+          });
+        } catch (e) {
+          console.error('Fatal fetch error:', e);
+          if (loader) loader.style.display = 'none';
+          if (errState) errState.classList.remove('hidden');
+        }
+      }
+      
+      fetchJobs();
+      
+      // Resume file input delete logic
+      const resumeInput = document.getElementById('resume');
+      const removeBtn = document.getElementById('remove-resume');
+      
+      if (resumeInput && removeBtn) {
+        resumeInput.addEventListener('change', () => {
+          if (resumeInput.files && resumeInput.files.length > 0) {
+            removeBtn.classList.remove('hidden');
+          } else {
+            removeBtn.classList.add('hidden');
+          }
+        });
+        
+        removeBtn.addEventListener('click', () => {
+          resumeInput.value = ''; // Clears the selected file
+          removeBtn.classList.add('hidden');
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

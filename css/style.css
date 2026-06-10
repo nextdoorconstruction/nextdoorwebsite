@@ -1,0 +1,239 @@
+/* ============================================================
+   style.css — NextDoor Constructions LLP
+   Entry point for Tailwind CSS.
+   Run: npm run dev (development) | npm run build (production)
+   ============================================================ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base Layer ────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-brand-bg text-brand-text font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-brand-text;
+  }
+
+  a {
+    @apply text-brand-text no-underline transition-colors duration-200;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-brand-red;
+  }
+
+  ::selection {
+    @apply bg-brand-red text-white;
+  }
+
+  hr {
+    @apply border-brand-border;
+  }
+}
+
+/* ── Component Layer ────────────────────────────────────────── */
+@layer components {
+
+  /* ── Layout ── */
+  .container-site {
+    @apply max-w-site mx-auto px-6 md:px-10 lg:px-16;
+  }
+
+  /* Compact section spacing: 80px desktop, scales down */
+  .section-padding {
+    @apply py-16 md:py-20;
+  }
+
+  /* ── Typography ── */
+
+  /* Bebas Neue display headings */
+  .heading-hero {
+    @apply font-display uppercase;
+    font-size: clamp(52px, 6.5vw, 90px);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .heading-page {
+    @apply font-display text-5xl md:text-6xl lg:text-7xl leading-none tracking-wide uppercase;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .heading-section {
+    @apply font-display text-4xl md:text-5xl leading-none tracking-wide uppercase;
+  }
+
+  .heading-card {
+    @apply font-display text-2xl md:text-3xl leading-none tracking-wide uppercase;
+  }
+
+  /* Eyebrow label */
+  .label-eyebrow {
+    @apply text-brand-red text-xs font-semibold tracking-[0.2em] uppercase mb-3 block font-sans;
+  }
+
+  /* Body text */
+  .body-lead {
+    @apply text-base md:text-lg text-brand-secondary leading-relaxed font-sans;
+  }
+
+  .body-base {
+    @apply text-sm md:text-base text-brand-secondary leading-relaxed font-sans;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-[#D93025] hover:bg-[#B5271E]
+           text-white font-semibold text-xs tracking-[0.12em] uppercase
+           px-7 py-4 transition-all duration-300 cursor-pointer font-sans shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 bg-white text-[#111111] border border-brand-border
+           hover:border-[#111111] hover:shadow-md
+           font-semibold text-xs tracking-[0.12em] uppercase
+           px-7 py-4 transition-all duration-300 cursor-pointer font-sans;
+  }
+
+  /* ── Cards ── */
+  .card-standard {
+    @apply relative overflow-hidden bg-white border border-brand-border p-8 shadow-standard
+           transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)];
+  }
+  .card-standard::after {
+    content: '';
+    @apply absolute top-0 left-0 h-1 w-0 bg-brand-red transition-all duration-500 ease-out;
+  }
+  .card-standard:hover::after {
+    @apply w-full;
+  }
+
+  .card-featured {
+    @apply bg-[#111111] border border-white/[0.08] p-8 shadow-featured text-white
+           transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(214,58,47,0.15)] hover:border-[#D63A2F]/50;
+  }
+  .card-featured h1, .card-featured h2, .card-featured h3, .card-featured h4, .card-featured p {
+    @apply text-white;
+  }
+  .card-featured .text-brand-muted {
+    @apply text-[#BDBDBD];
+  }
+
+  /* ── Stats ── */
+  .stat-number {
+    @apply font-display text-5xl md:text-6xl leading-none text-white uppercase tracking-wide;
+  }
+
+  .stat-label {
+    @apply text-brand-muted text-xs tracking-widest uppercase mt-2 font-sans;
+  }
+
+  /* ── Form inputs ── */
+  .form-input {
+    @apply w-full bg-brand-surface border border-brand-border text-brand-text
+           placeholder-brand-muted text-sm px-5 py-4
+           focus:outline-none focus:border-brand-red transition-colors duration-200 font-sans;
+  }
+
+  .form-label {
+    @apply block text-xs font-medium tracking-widest uppercase text-brand-muted mb-2 font-sans;
+  }
+
+  /* ── Badge / Tag ── */
+  .badge {
+    @apply inline-block text-xs font-semibold tracking-widest uppercase
+           border border-brand-border text-brand-muted px-3 py-1 font-sans;
+  }
+
+  /* ── Section divider (red line) ── */
+  .section-divider {
+    width: 40px;
+    height: 2px;
+    background: #D93025;
+    margin-bottom: 1.25rem;
+  }
+
+  /* ── Navigation Links ── */
+  .nav-link {
+    @apply relative text-white transition-colors duration-300;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #D63A2F;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    @apply !text-[#D63A2F];
+  }
+  
+  .nav-link.active {
+    @apply !text-[#D63A2F];
+  }
+  
+  .nav-link.active::after,
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Navbar Scrolled state & Light Pages */
+  .navbar-scrolled, .navbar-light-page {
+    @apply bg-white/95 backdrop-blur-md shadow-sm;
+  }
+  .navbar-scrolled #top-info-bar, .navbar-light-page #top-info-bar {
+    @apply hidden;
+  }
+  .navbar-scrolled .nav-link, .navbar-light-page .nav-link {
+    @apply text-[#111111];
+  }
+  .navbar-scrolled .nav-link.active, .navbar-light-page .nav-link.active,
+  .navbar-scrolled .nav-link:hover, .navbar-light-page .nav-link:hover {
+    @apply !text-[#D63A2F];
+  }
+  .navbar-scrolled #mobile-menu-toggle span, .navbar-light-page #mobile-menu-toggle span {
+    @apply bg-[#111111];
+  }
+}
+
+/* ── Utility Layer ────────────────────────────────────────── */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero Logo Specific Sizing */
+.hero-logo {
+  height: 40px !important;
+  width: auto !important;
+}
