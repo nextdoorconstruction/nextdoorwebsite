@@ -46,19 +46,9 @@ function initNavbar() {
       }
     });
 
-    /* ── Scroll: add dark background after 60px ── */
+    /* ── Scroll effect disabled as per fixed black header request ── */
     const handleScroll = () => {
-      try {
-        if (window.scrollY > 60) {
-          navbar.classList.add('navbar-scrolled');
-          if (logoImg) logoImg.src = '/Hero.png'; // Black text for white background
-        } else {
-          navbar.classList.remove('navbar-scrolled');
-          if (logoImg) logoImg.src = '/Hero-light.png'; // White text for dark background
-        }
-      } catch (err) {
-        // silent fail on scroll to avoid spam
-      }
+      // Navbar is permanently black, so no background/logo switching is needed.
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
