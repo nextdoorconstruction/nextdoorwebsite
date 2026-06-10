@@ -234,6 +234,8 @@
 
 /* Hero Logo Specific Sizing */
 .hero-logo {
-  height: 40px !important;
+  height: 60px !important;
   width: auto !important;
+  transform: scale(1.6);
+  transform-origin: left center;
 }
