@@ -17,12 +17,6 @@
   <style>
     .projects-bg-wrapper {
       position: relative;
-      z-index: 1;
-    }
-    .projects-bg-wrapper::before {
-      content: "";
-      position: fixed;
-      inset: 0;
       background-image: 
         linear-gradient(to bottom, #000000 0%, transparent 15%, transparent 100%),
         radial-gradient(circle, transparent 40%, rgba(20, 20, 20, 0.3) 100%),
@@ -31,7 +25,13 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      z-index: -1;
+      background-attachment: fixed;
+      z-index: 1;
+    }
+    @media (max-width: 768px) {
+      .projects-bg-wrapper {
+        background-attachment: scroll;
+      }
     }
   </style>
 </head>
@@ -45,7 +45,7 @@
 
     <!-- ══ 1. HERO ═══════════════════════════════════════════════════════════ -->
     <section class="relative pb-8 md:pb-10 border-b border-brand-border bg-transparent"
-             style="padding-top: 220px;"
+             style="padding-top: 320px;"
              aria-labelledby="projects-hero-heading">
       <div class="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-black via-black/70 via-40% to-transparent pointer-events-none z-0"></div>
       <div class="container-site relative z-10">

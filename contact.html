@@ -30,12 +30,6 @@
   <style>
     .contact-bg-wrapper {
       position: relative;
-      z-index: 1;
-    }
-    .contact-bg-wrapper::before {
-      content: "";
-      position: fixed;
-      inset: 0;
       background-image: 
         linear-gradient(to bottom, #000000 0%, transparent 15%, transparent 85%, #ffffff 100%),
         linear-gradient(rgba(240, 240, 240, 0.85), rgba(245, 245, 245, 0.9)),
@@ -43,7 +37,13 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      z-index: -1;
+      background-attachment: fixed;
+      z-index: 1;
+    }
+    @media (max-width: 768px) {
+      .contact-bg-wrapper {
+        background-attachment: scroll;
+      }
     }
   </style>
 </head>
@@ -57,7 +57,7 @@
 
     <!-- ══ 1. HERO + CONTACT INFO ════════════════════════════════════════════ -->
     <section class="relative pb-16 md:pb-20 border-b border-brand-border bg-transparent"
-             style="padding-top: 220px;"
+             style="padding-top: 320px;"
              aria-labelledby="contact-hero-heading">
       <div class="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-black via-black/70 via-40% to-transparent pointer-events-none z-0"></div>
       <div class="container-site relative z-10">

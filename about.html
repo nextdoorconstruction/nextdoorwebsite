@@ -21,12 +21,13 @@
     }
     .about-bg-wrapper::before {
       content: "";
-      position: fixed;
+      position: absolute;
       inset: 0;
       background-image: url('/WhatsApp%20Image%202026-06-09%20at%2012.43.03%20PM_lightened.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      background-attachment: fixed;
       opacity: 0.95;
       z-index: -2;
     }
@@ -37,6 +38,11 @@
       background: linear-gradient(to bottom, #000000 0%, transparent 15%, transparent 85%, #ffffff 100%);
       z-index: -1;
       pointer-events: none;
+    }
+    @media (max-width: 768px) {
+      .about-bg-wrapper::before {
+        background-attachment: scroll;
+      }
     }
   </style>
 </head>
@@ -49,7 +55,7 @@
     <div class="about-bg-wrapper">
 
       <section class="relative pb-8 md:pb-10 border-b border-brand-border bg-transparent"
-               style="padding-top: 220px;"
+               style="padding-top: 320px;"
                aria-labelledby="about-hero-heading">
         <div class="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-black via-black/70 via-40% to-transparent pointer-events-none z-0"></div>
         <div class="container-site relative z-10">
