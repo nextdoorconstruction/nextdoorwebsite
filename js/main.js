@@ -24,7 +24,8 @@ async function loadComponent(url, targetId, callback) {
   if (!target) return;
 
   try {
-    const response = await fetch(url);
+    const versionedUrl = url + '?v=' + new Date().getTime();
+    const response = await fetch(versionedUrl);
     if (!response.ok) throw new Error(`Failed to load component: ${url} (${response.status})`);
     const html = await response.text();
     target.innerHTML = html;
