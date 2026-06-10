@@ -17,6 +17,12 @@
   <style>
     .services-bg-wrapper {
       position: relative;
+      z-index: 1;
+    }
+    .services-bg-wrapper::before {
+      content: "";
+      position: fixed;
+      inset: 0;
       background-image: 
         linear-gradient(to bottom, #000000 0%, transparent 15%, transparent 100%),
         linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.85)),
@@ -24,13 +30,7 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-attachment: fixed;
-      z-index: 1;
-    }
-    @media (max-width: 768px) {
-      .services-bg-wrapper {
-        background-attachment: scroll;
-      }
+      z-index: -1;
     }
   </style>
 </head>

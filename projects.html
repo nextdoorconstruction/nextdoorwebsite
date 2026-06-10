@@ -17,6 +17,12 @@
   <style>
     .projects-bg-wrapper {
       position: relative;
+      z-index: 1;
+    }
+    .projects-bg-wrapper::before {
+      content: "";
+      position: fixed;
+      inset: 0;
       background-image: 
         linear-gradient(to bottom, #000000 0%, transparent 15%, transparent 100%),
         radial-gradient(circle, transparent 40%, rgba(20, 20, 20, 0.3) 100%),
@@ -25,13 +31,7 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-attachment: fixed;
-      z-index: 1;
-    }
-    @media (max-width: 768px) {
-      .projects-bg-wrapper {
-        background-attachment: scroll;
-      }
+      z-index: -1;
     }
   </style>
 </head>

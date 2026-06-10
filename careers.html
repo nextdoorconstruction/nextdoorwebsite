@@ -31,6 +31,12 @@
     }
     .careers-bg-wrapper {
       position: relative;
+      z-index: 1;
+    }
+    .careers-bg-wrapper::before {
+      content: "";
+      position: fixed;
+      inset: 0;
       background-image: 
         linear-gradient(to bottom, #000000 0%, transparent 15%, transparent 85%, #ffffff 100%),
         linear-gradient(rgba(240, 240, 240, 0.85), rgba(245, 245, 245, 0.9)),
@@ -38,13 +44,7 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-attachment: fixed;
-      z-index: 1;
-    }
-    @media (max-width: 768px) {
-      .careers-bg-wrapper {
-        background-attachment: scroll;
-      }
+      z-index: -1;
     }
     /* Google Forms tooltip */
     .gform-tooltip-wrap {

@@ -21,13 +21,12 @@
     }
     .about-bg-wrapper::before {
       content: "";
-      position: absolute;
+      position: fixed;
       inset: 0;
       background-image: url('/WhatsApp%20Image%202026-06-09%20at%2012.43.03%20PM_lightened.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-attachment: fixed;
       opacity: 0.95;
       z-index: -2;
     }
@@ -38,11 +37,6 @@
       background: linear-gradient(to bottom, #000000 0%, transparent 15%, transparent 85%, #ffffff 100%);
       z-index: -1;
       pointer-events: none;
-    }
-    @media (max-width: 768px) {
-      .about-bg-wrapper::before {
-        background-attachment: scroll;
-      }
     }
   </style>
 </head>
