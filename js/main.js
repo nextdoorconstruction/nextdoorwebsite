@@ -11,6 +11,13 @@
 
 'use strict';
 
+/* ── Deployment Diagnostics (Temporary) ──────────────────── */
+window.addEventListener('error', function(e) {
+  if (e.target && e.target.tagName === 'IMG') {
+    console.error('[DIAGNOSTIC] Failed to load image on deployment:', e.target.src);
+  }
+}, true);
+
 /* ── Component Loader ─────────────────────────────────────── */
 
 /**
