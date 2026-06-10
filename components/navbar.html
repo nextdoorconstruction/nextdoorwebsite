@@ -2,47 +2,49 @@
      components/navbar.html — NextDoor Constructions LLP
      Loaded into every page via main.js (fetch injection).
      ============================================================ -->
-<header id="navbar" class="fixed top-0 left-0 right-0 z-50 h-[80px] bg-[#000000] border-b border-[#1a1a1a] px-[5%] flex items-center justify-between transition-all duration-300">
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-[#000000] border-b border-[#1a1a1a] transition-all duration-300">
   
-  <!-- LEFT: Logo -->
-  <div class="flex-shrink-0">
-    <a href="/index.html" class="block">
-      <img src="/Hero-light.png" alt="NextDoor Constructions LLP" class="h-[40px] min-[480px]:h-[50px] md:h-[60px] w-auto object-contain">
-    </a>
+  <!-- 1. Top Info Bar (Restored) -->
+  <div id="top-info-bar" class="hidden lg:flex justify-between items-center px-[5%] py-2 border-b border-white/10 text-[11px] uppercase tracking-widest text-white bg-black/40">
+    <div class="flex gap-6 items-center">
+      <span class="flex items-center gap-2">Mon - Sat, 9:00 AM - 6:00 PM</span>
+    </div>
+    <div class="flex gap-6 items-center">
+      <a href="mailto:info@nextdoorconstructions.com" class="hover:text-[#ff3b30]">info@nextdoorconstructions.com</a>
+      <a href="tel:+919947998743" class="hover:text-[#ff3b30]">+91 99479 98743</a>
+    </div>
   </div>
 
-  <!-- CENTER: Navigation Links -->
+  <!-- 2. Main Navigation Bar -->
+  <div class="px-[5%]">
+    <nav class="grid grid-cols-[1fr_auto_1fr] items-center py-3" role="navigation">
+
+      <!-- LEFT: Logo (Reduced by 10% from previous size) -->
+      <div class="flex justify-start">
+        <a href="/index.html" class="block">
+          <img src="/Hero-light.png" alt="NextDoor Constructions LLP" class="h-[36px] sm:h-[45px] md:h-[54px] w-auto object-contain">
+        </a>
+      </div>
+
+      <!-- CENTER: Navigation Links -->
       <div class="hidden md:flex justify-center">
         <ul class="flex items-center gap-8" role="list">
-          <li><a href="/index.html"    class="nav-link text-white text-sm tracking-wide transition-colors duration-200">Home</a></li>
-          <li><a href="/about.html"    class="nav-link text-white text-sm tracking-wide transition-colors duration-200">About</a></li>
-          <li><a href="/services.html" class="nav-link text-white text-sm tracking-wide transition-colors duration-200">Services</a></li>
-          <li><a href="/projects.html" class="nav-link text-white text-sm tracking-wide transition-colors duration-200">Projects</a></li>
-          <li><a href="/careers.html"  class="nav-link text-white text-sm tracking-wide transition-colors duration-200">Careers</a></li>
-          <li><a href="/contact.html"  class="nav-link text-white text-sm tracking-wide transition-colors duration-200">Contact</a></li>
+          <li><a href="/index.html" class="text-white text-sm hover:text-[#ff3b30] transition-colors nav-link">Home</a></li>
+          <li><a href="/about.html" class="text-white text-sm hover:text-[#ff3b30] transition-colors nav-link">About</a></li>
+          <li><a href="/services.html" class="text-white text-sm hover:text-[#ff3b30] transition-colors nav-link">Services</a></li>
+          <li><a href="/projects.html" class="text-white text-sm hover:text-[#ff3b30] transition-colors nav-link">Projects</a></li>
+          <li><a href="/careers.html" class="text-white text-sm hover:text-[#ff3b30] transition-colors nav-link">Careers</a></li>
+          <li><a href="/contact.html" class="text-white text-sm hover:text-[#ff3b30] transition-colors nav-link">Contact</a></li>
         </ul>
       </div>
 
-      <!-- RIGHT: Desktop CTA & Mobile Hamburger -->
-      <div class="flex justify-end items-center">
-        <!-- Desktop CTA -->
+      <!-- RIGHT: CTA & Mobile Toggle -->
+      <div class="flex justify-end items-center gap-4">
         <div class="hidden md:block">
-          <a href="/contact.html#consultation" class="btn-primary text-xs" aria-label="Consult">
-            Consult
-          </a>
+          <a href="/contact.html#consultation" class="bg-[#ff3b30] text-white px-5 py-2 rounded text-xs uppercase font-bold hover:bg-white hover:text-black transition-all">Consult</a>
         </div>
-
-        <!-- Mobile Hamburger Button -->
-        <button
-          id="mobile-menu-toggle"
-          class="md:hidden flex flex-col gap-1.5 p-2 cursor-pointer"
-          aria-label="Toggle mobile navigation menu"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-        >
-          <span class="w-6 h-px bg-white block transition-all duration-300" id="hamburger-line-1"></span>
-          <span class="w-6 h-px bg-white block transition-all duration-300" id="hamburger-line-2"></span>
-          <span class="w-4 h-px bg-white block transition-all duration-300" id="hamburger-line-3"></span>
+        <button id="mobile-menu-toggle" class="md:hidden p-2 text-white">
+          <span>MENU</span>
         </button>
       </div>
 
