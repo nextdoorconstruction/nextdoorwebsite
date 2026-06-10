@@ -212,5 +212,3 @@ Custom smooth visual cues are configured in `css/animations.css`:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-#   n e x t d o o r w e b s i t e  
- 
