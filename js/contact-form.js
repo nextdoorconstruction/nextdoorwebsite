@@ -93,4 +93,12 @@ function initContactForm() {
     // Explicitly bypass the event listener and submit natively
     form.submit();
   });
+
+  // Handle browser back button (bfcache restore)
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted && form) {
+      if (btnText) btnText.textContent = 'Consult';
+      form.reset();
+    }
+  });
 }
