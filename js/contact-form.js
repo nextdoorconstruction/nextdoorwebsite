@@ -81,18 +81,16 @@ function initContactForm() {
   if (!form) return; // Not on the contact page
 
   form.addEventListener('submit', (e) => {
+    e.preventDefault(); // Take manual control
+
     if (!validateForm(form)) {
-      e.preventDefault(); // Stop submission if invalid
       return;
     }
 
     // UI: loading state
     if (btnText)   btnText.textContent = 'Sending…';
     
-    // We intentionally DO NOT disable the submit button here, because disabling it 
-    // instantly can cause some browsers (like Chrome/Safari) to abort the native form submission.
-
-    // Form is valid. The browser will now submit the form natively 
-    // to the action URL (Formspree) and redirect the user.
+    // Explicitly bypass the event listener and submit natively
+    form.submit();
   });
 }
