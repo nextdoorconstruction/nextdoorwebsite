@@ -87,8 +87,10 @@ function initContactForm() {
     }
 
     // UI: loading state
-    if (submitBtn) submitBtn.disabled = true;
     if (btnText)   btnText.textContent = 'Sending…';
+    
+    // We intentionally DO NOT disable the submit button here, because disabling it 
+    // instantly can cause some browsers (like Chrome/Safari) to abort the native form submission.
 
     // Form is valid. The browser will now submit the form natively 
     // to the action URL (Formspree) and redirect the user.
