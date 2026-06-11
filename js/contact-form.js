@@ -80,48 +80,17 @@ function initContactForm() {
 
   if (!form) return; // Not on the contact page
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    if (!validateForm(form)) return;
+  form.addEventListener('submit', (e) => {
+    if (!validateForm(form)) {
+      e.preventDefault(); // Stop submission if invalid
+      return;
+    }
 
     // UI: loading state
     if (submitBtn) submitBtn.disabled = true;
     if (btnText)   btnText.textContent = 'Sending…';
 
-    const formData = new FormData(form);
-
-    // Prepare payload with requested field names
-    const payload = {
-      Name: formData.get('contact-name'),
-      Phone: formData.get('contact-phone'),
-      Email: formData.get('contact-email'),
-      "Project Type": formData.get('contact-project-type'),
-      Message: formData.get('contact-message'),
-      _subject: `New Enquiry from ${formData.get('contact-name')} — NextDoor Constructions`
-    };
-
-    try {
-      const response = await fetch('https://formsubmit.co/ajax/info@nextdoorconstructions.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-
-      if (response.ok) {
-        showToast('Thank you. Our team will contact you within 24 hours.', 'success');
-        form.reset();
-      } else {
-        const result = await response.json().catch(() => ({}));
-        throw new Error(result.error || 'Submission failed.');
-      }
-    } catch (error) {
-      console.error('[NextDoor] Form submission error:', error);
-      showToast('Something went wrong. Please try again or call us directly.', 'error');
-    } finally {
-      // Restore button
-      if (submitBtn) submitBtn.disabled = false;
-      if (btnText)   btnText.textContent = 'Send Message';
-    }
+    // Form is valid. The browser will now submit the form natively 
+    // to the action URL (Formspree) and redirect the user.
   });
 }
