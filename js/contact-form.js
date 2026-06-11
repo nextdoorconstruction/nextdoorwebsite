@@ -102,7 +102,7 @@ function initContactForm() {
     };
 
     try {
-      const response = await fetch('https://formspree.io/f/xpqerdqo', {
+      const response = await fetch('https://formsubmit.co/ajax/info@nextdoorconstructions.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(payload),
