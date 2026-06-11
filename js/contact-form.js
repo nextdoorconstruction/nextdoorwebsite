@@ -29,10 +29,10 @@ function showToast(message, type = 'success') {
 
   toast.textContent = message;
   toast.className = ''; // Reset classes
+  toast.style.display = ''; // Clear inline display:none
   toast.classList.add(type);
 
   setTimeout(() => {
-    toast.className = '';
     toast.style.display = 'none';
   }, 5000);
 }
