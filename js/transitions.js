@@ -108,3 +108,19 @@ function initTransitions() {
 
 // Entry animation fires immediately on DOM ready — before components load
 document.addEventListener('DOMContentLoaded', triggerPageEnter);
+
+// ── Back/Forward Cache Restore ─────────────────────────────
+//
+// When navigating away, triggerPageExit() leaves the body in the
+// .page-exit state (opacity: 0) before calling window.location.href.
+// If the user returns via the browser back/forward button, some
+// browsers restore the page from bfcache in that exact hidden state.
+// DOMContentLoaded does not fire on bfcache restores, so without this
+// the page would appear blank. Re-run the enter animation and reset
+// navigation state whenever the page is restored this way.
+window.addEventListener('pageshow', (e) => {
+  if (e.persisted) {
+    isNavigating = false;
+    triggerPageEnter();
+  }
+});
