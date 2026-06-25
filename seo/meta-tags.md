@@ -3,7 +3,7 @@
 # This file is a DEVELOPER REFERENCE — not served to users.
 # Copy the tags from each section into the corresponding HTML <head>.
 # Replace all [PLACEHOLDERS] with final content from the brochure.
-# Replace YOUR-VERCEL-DOMAIN with your actual domain when available.
+# Domain: https://www.nextdoorconstructions.com
 # ─────────────────────────────────────────────────────────────────────────────
 
 ---
@@ -111,7 +111,7 @@
 
 ## Checklist Before Going Live
 
-- [ ] Replace all `YOUR-VERCEL-DOMAIN` placeholders with actual domain
+- [x] All YOUR-VERCEL-DOMAIN placeholders replaced with https://www.nextdoorconstructions.com
 - [ ] Add unique `<title>` and `<meta name="description">` to every page
 - [ ] Upload all 5 OG images (1200×630px) to `/assets/images/`
 - [ ] Update JSON-LD structured data with real contact info

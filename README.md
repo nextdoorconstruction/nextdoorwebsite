@@ -1,6 +1,6 @@
 # NextDoor Constructions LLP
 
-[![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fnextdoorconstructions.com&logo=vercel)](https://YOUR-VERCEL-DOMAIN.vercel.app/)
+[![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fnextdoorconstructions.com&logo=vercel)](https://www.nextdoorconstructions.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v3.4-38bdf8?logo=tailwind-css)](https://tailwindcss.com/)
 [![JS Vanilla](https://img.shields.io/badge/Vanilla_JS-ES6%2B-f7df1e?logo=javascript)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
