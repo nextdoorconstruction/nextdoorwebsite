@@ -13,4 +13,4 @@ Disallow: /css/style.css
 Disallow: /seo/meta-tags.md
 
 # Sitemap location
-Sitemap: https://www.nextdoorconstructions.com/seo/sitemap.xml
+Sitemap: https://www.nextdoorconstructions.com/sitemap.xml
